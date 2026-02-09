@@ -23,6 +23,7 @@ export default function Home() {
     { href: '#features', label: 'Features' },
     { href: '#use-cases', label: 'Use Cases' },
     { href: '#getting-started', label: 'Getting Started' },
+    { href: '/docs', label: 'Docs' },
     { href: '#support', label: 'Support' },
   ]
 
@@ -57,7 +58,7 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-1.5">
-            <Link href="https://github.com/scanipy/scanipy" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/papadoxie/scanipy" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="rounded-full gap-1.5 h-8">
                 <Github className="w-4 h-4" />
                 <span className="hidden sm:inline text-xs">GitHub</span>
@@ -93,7 +94,7 @@ export default function Home() {
                   ))}
                   <Separator className="my-2" />
                   <Link
-                    href="https://github.com/scanipy/scanipy"
+                    href="https://github.com/papadoxie/scanipy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-foreground/70 hover:text-foreground py-3 px-3 rounded-lg hover:bg-muted/50 transition text-sm font-medium"
@@ -136,13 +137,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link href="https://github.com/scanipy/scanipy#-quick-start" target="_blank" rel="noopener noreferrer">
+              <Link href="#getting-started" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="gap-2 w-full sm:w-auto rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25">
                   Get Started
                   <ChevronRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <Link href="https://github.com/scanipy/scanipy" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/papadoxie/scanipy" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto rounded-full bg-transparent">
                   <Github className="w-4 h-4" />
                   View on GitHub
@@ -427,7 +428,7 @@ export default function Home() {
             <p className="text-foreground/60 text-sm mb-4">
               Found a vulnerability using Scanipy? We&apos;d love to hear about it!
             </p>
-            <Link href="https://github.com/scanipy/scanipy/issues" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/papadoxie/scanipy/issues" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="gap-2 rounded-full bg-transparent">
                 <Github className="w-4 h-4" />
                 Report Your Finding
@@ -569,7 +570,7 @@ export default function Home() {
           </div>
 
           <div className="text-center pt-8">
-            <Link href="https://github.com/scanipy/scanipy#-installation" target="_blank" rel="noopener noreferrer">
+            <Link href="docs/installation" target="_blank" rel="noopener noreferrer">
               <Button className="gap-2 rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25">
                 Read Full Installation Guide
                 <ArrowRight className="w-4 h-4" />
@@ -597,25 +598,25 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <Link href="https://github.com/scanipy/scanipy/tree/main/docs" target="_blank" rel="noopener noreferrer">
+                <Link href="/docs">
                   <Card className="p-4 bg-card/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all text-center group cursor-pointer h-full">
                     <BookOpen className="w-5 h-5 text-primary mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span className="text-xs font-medium text-foreground">Docs</span>
                   </Card>
                 </Link>
-                <Link href="https://github.com/scanipy/scanipy/issues" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/papadoxie/scanipy/issues" target="_blank" rel="noopener noreferrer">
                   <Card className="p-4 bg-card/60 backdrop-blur-sm border border-border/50 hover:border-accent/30 transition-all text-center group cursor-pointer h-full">
                     <Bug className="w-5 h-5 text-accent mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span className="text-xs font-medium text-foreground">Issues</span>
                   </Card>
                 </Link>
-                <Link href="https://github.com/scanipy/scanipy#-contributing" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/papadoxie/scanipy#-contributing" target="_blank" rel="noopener noreferrer">
                   <Card className="p-4 bg-card/60 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all text-center group cursor-pointer h-full">
                     <Users className="w-5 h-5 text-secondary mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span className="text-xs font-medium text-foreground">Contribute</span>
                   </Card>
                 </Link>
-                <Link href="https://github.com/scanipy/scanipy/security" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/papadoxie/scanipy/security" target="_blank" rel="noopener noreferrer">
                   <Card className="p-4 bg-card/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all text-center group cursor-pointer h-full">
                     <Lock className="w-5 h-5 text-primary mx-auto mb-2 group-hover:scale-110 transition-transform" />
                     <span className="text-xs font-medium text-foreground">Security</span>
@@ -639,16 +640,16 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-6 text-sm">
-              <Link href="https://github.com/scanipy/scanipy/tree/main/docs" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
+              <Link href="/docs" className="text-foreground/50 hover:text-foreground transition">
                 Docs
               </Link>
-              <Link href="https://github.com/scanipy/scanipy/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
+              <Link href="https://github.com/papadoxie/scanipy/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
                 Changelog
               </Link>
-              <Link href="https://github.com/scanipy/scanipy/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
+              <Link href="https://github.com/papadoxie/scanipy/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
                 MIT License
               </Link>
-              <Link href="https://github.com/scanipy/scanipy" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
+              <Link href="https://github.com/papadoxie/scanipy" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
                 <Github className="w-4 h-4" />
               </Link>
             </div>

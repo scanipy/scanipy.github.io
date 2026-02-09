@@ -123,3 +123,190 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ── Docs prose styles ── */
+
+.prose {
+  @apply text-foreground/85 leading-relaxed text-base;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold text-foreground mt-0 mb-6 pb-3 border-b border-border/50;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold text-foreground mt-12 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.prose h4 {
+  @apply text-lg font-medium text-foreground mt-6 mb-2;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose a {
+  @apply text-primary underline underline-offset-2 decoration-primary/30 hover:decoration-primary transition-colors;
+}
+
+.prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.prose ul {
+  @apply mb-4 pl-6 list-disc space-y-1;
+}
+
+.prose ol {
+  @apply mb-4 pl-6 list-decimal space-y-1;
+}
+
+.prose li {
+  @apply text-foreground/80;
+}
+
+.prose li > ul,
+.prose li > ol {
+  @apply mt-1 mb-0;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary/30 pl-4 py-1 my-4 text-foreground/60 italic;
+}
+
+.prose code {
+  @apply bg-muted text-primary text-[0.875em] px-1.5 py-0.5 rounded font-mono;
+}
+
+.prose pre {
+  @apply bg-card rounded-lg p-4 overflow-x-auto my-6 border border-border/50;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-foreground/90 text-sm leading-relaxed;
+}
+
+.prose table {
+  @apply w-full border-collapse my-6 text-sm;
+}
+
+.prose th {
+  @apply bg-muted/50 text-left p-3 font-semibold text-foreground border border-border/50;
+}
+
+.prose td {
+  @apply p-3 text-foreground/80 border border-border/50;
+}
+
+.prose hr {
+  @apply my-8 border-border/50;
+}
+
+.prose img {
+  @apply rounded-lg my-6 max-w-full;
+}
+
+/* ── MkDocs admonitions ── */
+
+.admonition {
+  @apply my-6 rounded-lg border p-4;
+}
+
+.admonition-title {
+  @apply font-semibold text-sm mb-2;
+}
+
+.admonition-note {
+  @apply bg-blue-500/5 border-blue-500/20;
+}
+.admonition-note .admonition-title {
+  color: #3b82f6;
+}
+
+.admonition-warning {
+  @apply bg-yellow-500/5 border-yellow-500/20;
+}
+.admonition-warning .admonition-title {
+  color: #eab308;
+}
+
+.admonition-tip {
+  @apply bg-green-500/5 border-green-500/20;
+}
+.admonition-tip .admonition-title {
+  color: #22c55e;
+}
+
+.admonition-danger,
+.admonition-error {
+  @apply bg-red-500/5 border-red-500/20;
+}
+.admonition-danger .admonition-title,
+.admonition-error .admonition-title {
+  color: #ef4444;
+}
+
+.admonition-info {
+  @apply bg-primary/5 border-primary/20;
+}
+.admonition-info .admonition-title {
+  @apply text-primary;
+}
+
+/* ── Code syntax highlighting (hljs) ── */
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  @apply text-accent;
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #a78bcc;
+}
+
+.hljs-comment,
+.hljs-quote {
+  @apply text-foreground/30 italic;
+}
+
+.hljs-function,
+.hljs-title {
+  @apply text-primary;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-selector-id {
+  @apply text-accent;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-template-variable {
+  @apply text-foreground/80;
+}
+
+.hljs-type,
+.hljs-title.class_ {
+  color: #a78bcc;
+}
+
+.hljs-meta,
+.hljs-selector-class {
+  @apply text-foreground/50;
+}
+
+.hljs-addition {
+  color: #22c55e;
+}
+
+.hljs-deletion {
+  color: #ef4444;
+}

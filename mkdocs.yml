@@ -1,0 +1,74 @@
+site_name: Scanipy
+site_description: A powerful command-line tool to scan open source code-bases on GitHub for security patterns and vulnerabilities.
+site_url: https://scanipy.github.io/scanipy/
+repo_url: https://github.com/papadoxie/scanipy
+repo_name: papadoxie/scanipy
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+nav:
+  - Home: home.md
+  - Getting Started:
+    - Installation: installation.md
+    - Usage Guide: usage.md
+  - Integrations:
+    - Semgrep: semgrep.md
+    - CodeQL: codeql.md
+  - Reference:
+    - CLI Reference: cli-reference.md
+    - Examples: examples.md
+  - Development: development.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/papadoxie/scanipy
