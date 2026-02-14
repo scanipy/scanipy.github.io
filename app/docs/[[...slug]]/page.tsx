@@ -50,12 +50,24 @@ export async function generateMetadata({
       title: 'Documentation - Scanipy',
       description:
         'Scanipy documentation - installation guides, API reference, integrations, and developer docs.',
+      openGraph: {
+        title: 'Documentation - Scanipy',
+        description:
+          'Scanipy documentation - installation guides, API reference, integrations, and developer docs.',
+        url: 'https://scanipy.com/docs',
+      },
     }
   }
 
   const doc = getDocBySlug(resolvedSlug)
   if (!doc) return { title: 'Page Not Found - Scanipy Docs' }
-  return { title: `${doc.title} - Scanipy Docs` }
+  return {
+    title: `${doc.title} - Scanipy Docs`,
+    openGraph: {
+      title: `${doc.title} - Scanipy Docs`,
+      url: `https://scanipy.com/docs/${resolvedSlug.join('/')}`,
+    },
+  }
 }
 
 /* -- Page -- */

@@ -9,6 +9,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://scanipy.com'),
   title: 'Scanipy - Python Source Code Security Scanner',
   description: 'A powerful CLI tool to scan open source code-bases on GitHub for security patterns and vulnerabilities. Find CVEs, run Semgrep and CodeQL analysis.',
   generator: 'v0.app',
@@ -28,6 +29,27 @@ export const metadata: Metadata = {
       },
     ],
     apple: '/apple-icon.png',
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Scanipy',
+    title: 'Scanipy - Python Source Code Security Scanner',
+    description: 'A powerful CLI tool to scan open source code-bases on GitHub for security patterns and vulnerabilities. Find CVEs, run Semgrep and CodeQL analysis.',
+    url: 'https://scanipy.com',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Scanipy - Python Source Code Security Scanner',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Scanipy - Python Source Code Security Scanner',
+    description: 'A powerful CLI tool to scan open source code-bases on GitHub for security patterns and vulnerabilities. Find CVEs, run Semgrep and CodeQL analysis.',
+    images: ['/og-image.png'],
   },
 }
 
