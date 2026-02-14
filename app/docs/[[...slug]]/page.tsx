@@ -42,18 +42,20 @@ export async function generateMetadata({
   const resolvedSlug = slug ?? []
 
   // Home page (root or /docs/home)
+  const docsTitle = 'Documentation - Scanipy'
+  const docsDescription =
+    'Scanipy documentation - installation guides, API reference, integrations, and developer docs.'
+
   if (
     resolvedSlug.length === 0 ||
     (resolvedSlug.length === 1 && resolvedSlug[0] === 'home')
   ) {
     return {
-      title: 'Documentation - Scanipy',
-      description:
-        'Scanipy documentation - installation guides, API reference, integrations, and developer docs.',
+      title: docsTitle,
+      description: docsDescription,
       openGraph: {
-        title: 'Documentation - Scanipy',
-        description:
-          'Scanipy documentation - installation guides, API reference, integrations, and developer docs.',
+        title: docsTitle,
+        description: docsDescription,
         url: 'https://scanipy.com/docs',
       },
     }
