@@ -5,6 +5,7 @@ import { markdownToHtml, extractHeadings } from '@/lib/markdown'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import DocsHomePage from '@/components/docs-home-page'
+import { siteUrl } from '@/lib/site'
 
 /* -- Static generation -- */
 
@@ -56,7 +57,7 @@ export async function generateMetadata({
       openGraph: {
         title: docsTitle,
         description: docsDescription,
-        url: 'https://scanipy.com/docs',
+        url: `${siteUrl}/docs`,
       },
     }
   }
@@ -67,7 +68,7 @@ export async function generateMetadata({
     title: `${doc.title} - Scanipy Docs`,
     openGraph: {
       title: `${doc.title} - Scanipy Docs`,
-      url: `https://scanipy.com/docs/${resolvedSlug.join('/')}`,
+      url: `${siteUrl}/docs/${resolvedSlug.join('/')}`,
     },
   }
 }

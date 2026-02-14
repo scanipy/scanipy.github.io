@@ -3,14 +3,11 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import { siteUrl, siteTitle, siteDescription } from '@/lib/site'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
-const siteTitle = 'Scanipy - Python Source Code Security Scanner'
-const siteDescription = 'A powerful CLI tool to scan open source code-bases on GitHub for security patterns and vulnerabilities. Find CVEs, run Semgrep and CodeQL analysis.'
-const siteUrl = 'https://scanipy.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
