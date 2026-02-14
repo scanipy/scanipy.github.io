@@ -5,6 +5,7 @@ import { markdownToHtml, extractHeadings } from '@/lib/markdown'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import DocsHomePage from '@/components/docs-home-page'
+import { siteUrl } from '@/lib/site'
 
 /* -- Static generation -- */
 
@@ -42,20 +43,34 @@ export async function generateMetadata({
   const resolvedSlug = slug ?? []
 
   // Home page (root or /docs/home)
+  const docsTitle = 'Documentation - Scanipy'
+  const docsDescription =
+    'Scanipy documentation - installation guides, API reference, integrations, and developer docs.'
+
   if (
     resolvedSlug.length === 0 ||
     (resolvedSlug.length === 1 && resolvedSlug[0] === 'home')
   ) {
     return {
-      title: 'Documentation - Scanipy',
-      description:
-        'Scanipy documentation - installation guides, API reference, integrations, and developer docs.',
+      title: docsTitle,
+      description: docsDescription,
+      openGraph: {
+        title: docsTitle,
+        description: docsDescription,
+        url: `${siteUrl}/docs`,
+      },
     }
   }
 
   const doc = getDocBySlug(resolvedSlug)
   if (!doc) return { title: 'Page Not Found - Scanipy Docs' }
-  return { title: `${doc.title} - Scanipy Docs` }
+  return {
+    title: `${doc.title} - Scanipy Docs`,
+    openGraph: {
+      title: `${doc.title} - Scanipy Docs`,
+      url: `${siteUrl}/docs/${resolvedSlug.join('/')}`,
+    },
+  }
 }
 
 /* -- Page -- */
