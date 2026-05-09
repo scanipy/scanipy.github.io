@@ -1,3 +1,3 @@
 export const siteUrl = 'https://scanipy.com'
-export const siteTitle = 'Scanipy - Python Source Code Security Scanner'
-export const siteDescription = 'A powerful CLI tool to scan open source codebases on GitHub for security patterns and vulnerabilities. Find CVEs, run Semgrep and CodeQL analysis.'
+export const siteTitle = 'Scanipy — Vulnerability detection by CWE class, multi-SCM, deterministic by default'
+export const siteDescription = 'Class-specific security analysis at SaaS scale. Built on Yamaguchi’s Code Property Graph (S&P 2014), Engler-style class-specific checkers, and Stanford IRIS for LLM-augmented triage.'

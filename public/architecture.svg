@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="arch-title arch-desc" preserveAspectRatio="xMidYMid meet">
+  <title id="arch-title">Scanipy v2 architecture</title>
+  <desc id="arch-desc">A horizontal pipeline. From left to right: SCM connectors (GitHub, GitLab, Bitbucket, Azure DevOps) feed into the snapshotter, which produces one Code Property Graph and tarball per (codebase, commit) and stores them in S3. The detector pool (10 vulnerability classes) reads the snapshot and emits SARIF. The findings normaliser computes a stable SHA-256 fingerprint and stores rows in Postgres, keyed by (codebase_id, fingerprint).</desc>
+
+  <!-- All shapes use currentColor so the diagram inherits the theme. -->
+  <g fill="none" stroke="currentColor" stroke-width="1.5">
+    <!-- SCM connectors stack -->
+    <g transform="translate(20,40)">
+      <rect width="160" height="56" rx="8" />
+      <text x="80" y="22" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="13" font-weight="600" text-anchor="middle">SCM connectors</text>
+      <text x="80" y="42" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.7" text-anchor="middle">github · gitlab · bitbucket · ado</text>
+    </g>
+
+    <!-- Webhook -->
+    <g transform="translate(20,116)">
+      <rect width="160" height="40" rx="8" stroke-dasharray="4 3" />
+      <text x="80" y="18" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="11" font-weight="500" text-anchor="middle">webhook / API trigger</text>
+      <text x="80" y="32" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.6" text-anchor="middle">(codebase, commit_sha)</text>
+    </g>
+
+    <!-- Snapshotter -->
+    <g transform="translate(220,40)">
+      <rect width="200" height="116" rx="8" />
+      <text x="100" y="24" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="13" font-weight="600" text-anchor="middle">Snapshotter</text>
+      <text x="100" y="46" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="10" opacity="0.7" text-anchor="middle">git clone · tar</text>
+      <text x="100" y="64" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="10" opacity="0.7" text-anchor="middle">joern → cpg.bin</text>
+      <text x="100" y="82" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="10" opacity="0.7" text-anchor="middle">codeql database create</text>
+      <text x="100" y="104" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.6" text-anchor="middle">cached on (codebase, sha)</text>
+    </g>
+
+    <!-- S3 -->
+    <g transform="translate(220,176)">
+      <rect width="200" height="40" rx="8" stroke-dasharray="4 3" />
+      <text x="100" y="18" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="11" font-weight="500" text-anchor="middle">S3 / object storage</text>
+      <text x="100" y="32" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="10" opacity="0.6" text-anchor="middle">orgs/&lt;org&gt;/snapshots/...</text>
+    </g>
+
+    <!-- Detector pool -->
+    <g transform="translate(460,40)">
+      <rect width="240" height="156" rx="8" />
+      <text x="120" y="24" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="13" font-weight="600" text-anchor="middle">Detector pool</text>
+      <text x="120" y="40" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.6" text-anchor="middle">one job per (snapshot, detector)</text>
+
+      <!-- 10 detector pills laid out in a 2-col grid -->
+      <g font-family="ui-mono,Menlo,monospace" font-size="9" fill="currentColor" stroke="none">
+        <text x="20"  y="62">· path-traversal</text>
+        <text x="130" y="62">· memory-safety</text>
+        <text x="20"  y="78">· injection</text>
+        <text x="130" y="78">· deserialization</text>
+        <text x="20"  y="94">· ssrf</text>
+        <text x="130" y="94">· crypto-misuse</text>
+        <text x="20"  y="110">· authn-authz</text>
+        <text x="130" y="110">· race-toctou</text>
+        <text x="20"  y="126">· secrets</text>
+        <text x="130" y="126">· dep-cve</text>
+      </g>
+      <text x="120" y="146" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="9" opacity="0.55" text-anchor="middle">SARIF 2.1.0 out</text>
+    </g>
+
+    <!-- Findings normaliser -->
+    <g transform="translate(740,40)">
+      <rect width="200" height="116" rx="8" />
+      <text x="100" y="24" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="13" font-weight="600" text-anchor="middle">Findings normaliser</text>
+      <text x="100" y="48" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="9" opacity="0.7" text-anchor="middle">sha256(rule_id|file|symbol|</text>
+      <text x="100" y="62" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="9" opacity="0.7" text-anchor="middle">dataflow_signature)</text>
+      <text x="100" y="86" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.6" text-anchor="middle">stable across scans</text>
+      <text x="100" y="102" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.6" text-anchor="middle">CWE-1000 anchored</text>
+    </g>
+
+    <!-- Postgres findings -->
+    <g transform="translate(740,176)">
+      <rect width="200" height="40" rx="8" stroke-dasharray="4 3" />
+      <text x="100" y="18" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="11" font-weight="500" text-anchor="middle">Postgres · findings</text>
+      <text x="100" y="32" fill="currentColor" stroke="none" font-family="ui-mono,Menlo,monospace" font-size="10" opacity="0.6" text-anchor="middle">UNIQUE(codebase_id, fingerprint)</text>
+    </g>
+
+    <!-- Arrows -->
+    <!-- SCM -> snapshotter -->
+    <path d="M 180 68 H 220" stroke-width="1" />
+    <path d="M 215 64 L 222 68 L 215 72 Z" fill="currentColor" stroke="none" />
+    <!-- Webhook -> snapshotter -->
+    <path d="M 180 136 Q 200 136 200 100 H 220" stroke-width="1" />
+    <path d="M 215 96 L 222 100 L 215 104 Z" fill="currentColor" stroke="none" />
+    <!-- Snapshotter -> S3 -->
+    <path d="M 320 156 V 176" stroke-width="1" />
+    <path d="M 316 171 L 320 178 L 324 171 Z" fill="currentColor" stroke="none" />
+    <!-- S3 -> detector pool (back up) -->
+    <path d="M 420 196 H 580 V 196" stroke-width="1" stroke-dasharray="3 3" />
+    <path d="M 580 196 V 196" stroke-width="1" />
+    <path d="M 460 130 H 420 V 196" stroke-width="1" stroke-dasharray="3 3" fill="none" />
+    <!-- Snapshotter -> detector pool -->
+    <path d="M 420 98 H 460" stroke-width="1" />
+    <path d="M 455 94 L 462 98 L 455 102 Z" fill="currentColor" stroke="none" />
+    <!-- Detector pool -> normaliser -->
+    <path d="M 700 118 H 740" stroke-width="1" />
+    <path d="M 735 114 L 742 118 L 735 122 Z" fill="currentColor" stroke="none" />
+    <!-- Normaliser -> findings -->
+    <path d="M 840 156 V 176" stroke-width="1" />
+    <path d="M 836 171 L 840 178 L 844 171 Z" fill="currentColor" stroke="none" />
+  </g>
+
+  <!-- Bottom credit line -->
+  <text x="480" y="320" fill="currentColor" stroke="none" font-family="ui-sans-serif,system-ui" font-size="10" opacity="0.45" text-anchor="middle">CPG construction: joern. Detection: Semgrep + CodeQL + class-specific taint queries.</text>
+</svg>
