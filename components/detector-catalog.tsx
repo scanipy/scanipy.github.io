@@ -12,8 +12,9 @@ export function DetectorCatalog() {
     <div className="overflow-x-auto -mx-4 sm:mx-0">
       <table className="w-full text-sm">
         <caption className="caption-bottom text-xs text-foreground/55 mt-4 px-4 sm:px-0 text-left">
-          Anchored to MITRE CWE-1000 (Research view) so findings map
-          directly into compliance frameworks.
+          Roadmap classes ship with manifests today and content as the
+          detector lands. CWE numbers map directly into compliance
+          frameworks.
         </caption>
         <thead>
           <tr className="border-b border-border/50 text-left text-foreground/60">

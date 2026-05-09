@@ -19,8 +19,8 @@ interface CitationProps {
  * separate line in muted text. The url is wrapped in a normal Next
  * link with `target="_blank"` and `rel="noopener noreferrer"`.
  *
- * Used under each homepage pillar, the architecture-diagram caption,
- * the catalog caption, and the taint-spec section.
+ * Used by the `/research` bibliography page. Not used in marketing-page
+ * body copy — those pages link to `/research` from the footer instead.
  */
 export function Citation({ id, showGist = true }: CitationProps) {
   const c = citations[id]
