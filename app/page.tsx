@@ -1,111 +1,23 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
-import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'
-import { Separator } from '@/components/ui/separator'
 import {
   ChevronRight, Zap, Shield, Search, Code2, Github, ExternalLink,
-  Terminal, Menu, BookOpen, Bug, Users, Lock, Star, RotateCcw, FileCode,
+  Terminal, BookOpen, Bug, Users, Lock, Star, RotateCcw, FileCode,
   ArrowRight, CheckCircle2, Circle, Sparkles
 } from 'lucide-react'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { SiteNav } from '@/components/site-nav'
+import { SiteFooter } from '@/components/site-footer'
 
 export default function Home() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const navLinks = [
-    { href: '#features', label: 'Features' },
-    { href: '#use-cases', label: 'Use Cases' },
-    { href: '#getting-started', label: 'Getting Started' },
-    { href: '/docs', label: 'Docs' },
-    { href: '#support', label: 'Support' },
-  ]
-
   return (
     <div className="min-h-screen bg-background">
-      {/* ─── Floating Pill Navbar ─── */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl">
-        <div className="bg-background/70 backdrop-blur-xl border border-border/50 rounded-full px-4 py-2.5 flex items-center justify-between shadow-lg shadow-primary/5">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/scanipy-logo.svg" alt="Scanipy Logo" className="w-7 h-7" />
-            <span className="font-bold text-lg text-foreground">scanipy</span>
-          </Link>
-
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-foreground/60 hover:text-foreground px-3 py-1.5 rounded-full hover:bg-muted/50 transition-all"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <Link href="https://github.com/papadoxie/scanipy" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="sm" className="rounded-full gap-1.5 h-8">
-                <Github className="w-4 h-4" />
-                <span className="hidden sm:inline text-xs">GitHub</span>
-              </Button>
-            </Link>
-
-            <ThemeToggle />
-
-            {/* Mobile menu */}
-            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="md:hidden rounded-full h-8 w-8 p-0">
-                  <Menu className="w-4 h-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <SheetHeader>
-                  <SheetTitle className="flex items-center gap-2">
-                    <img src="/scanipy-logo.svg" alt="Scanipy Logo" className="w-6 h-6" />
-                    scanipy
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-1 px-4">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="text-foreground/70 hover:text-foreground py-3 px-3 rounded-lg hover:bg-muted/50 transition text-sm font-medium"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                  <Separator className="my-2" />
-                  <Link
-                    href="https://github.com/papadoxie/scanipy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-foreground/70 hover:text-foreground py-3 px-3 rounded-lg hover:bg-muted/50 transition text-sm font-medium"
-                  >
-                    <Github className="w-4 h-4" />
-                    View on GitHub
-                  </Link>
-                  <Separator className="my-2" />
-                  <div className="flex items-center justify-between py-3 px-3">
-                    <span className="text-sm font-medium text-foreground/70">Theme</span>
-                    <ThemeToggle />
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       {/* ─── Hero: Split Layout ─── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-36 md:pb-24">
@@ -621,34 +533,7 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* ─── Footer: Slim ─── */}
-      <footer className="border-t border-border/50 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <img src="/scanipy-logo.svg" alt="Scanipy Logo" className="w-5 h-5" />
-              <span className="text-sm text-foreground/60">
-                © {new Date().getFullYear()} Scanipy. Built with ❤️ for the security research community.
-              </span>
-            </div>
-
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/docs" className="text-foreground/50 hover:text-foreground transition">
-                Docs
-              </Link>
-              <Link href="https://github.com/papadoxie/scanipy/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
-                Changelog
-              </Link>
-              <Link href="https://github.com/papadoxie/scanipy/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
-                MIT License
-              </Link>
-              <Link href="https://github.com/papadoxie/scanipy" target="_blank" rel="noopener noreferrer" className="text-foreground/50 hover:text-foreground transition">
-                <Github className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
