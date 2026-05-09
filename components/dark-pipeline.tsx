@@ -4,8 +4,8 @@
  * borders and connector lines, and bolder typography than the prior
  * outline-only diagram.
  *
- * Static (no animation) — the previous animated version was reported
- * as "not working." This visual relies on weight and contrast, not
+ * Static (no animation). The previous animated version was reported
+ * as "not working"; this visual relies on weight and contrast, not
  * motion, to read as a flow.
  *
  * Designed against a dark hero backdrop. The cards' gradient fills are
@@ -26,7 +26,7 @@ const DETECTORS_LEFT = ['path-traversal', 'memory-safety', 'injection', 'deseria
 const DETECTORS_RIGHT = ['ssrf', 'crypto-misuse', 'authn-authz', 'secrets']
 
 export function DarkPipeline({ className = '' }: { className?: string }) {
-  // Layout constants — single source for nudging proportions later.
+  // Layout constants: single source for nudging proportions later.
   const VB_W = 1100
   const VB_H = 640
 
@@ -73,7 +73,7 @@ export function DarkPipeline({ className = '' }: { className?: string }) {
         </desc>
 
         <defs>
-          {/* Gradient fill for every card — top-down, light to dark. */}
+          {/* Gradient fill for every card: top-down, light to dark. */}
           <linearGradient id="dp-card-fill" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#1f1426" />
             <stop offset="100%" stopColor="#0f0a12" />
@@ -89,12 +89,12 @@ export function DarkPipeline({ className = '' }: { className?: string }) {
             <stop offset="50%" stopColor="#d946ef" stopOpacity="0.9" />
             <stop offset="100%" stopColor="#d946ef" stopOpacity="0.25" />
           </linearGradient>
-          {/* Subtle radial under the central node — depth cue. */}
+          {/* Subtle radial under the central node: depth cue. */}
           <radialGradient id="dp-snap-glow" cx="0.5" cy="0.5" r="0.6">
             <stop offset="0%" stopColor="#d946ef" stopOpacity="0.18" />
             <stop offset="100%" stopColor="#d946ef" stopOpacity="0" />
           </radialGradient>
-          {/* Glow filter — small Gaussian blur merged behind the source. */}
+          {/* Glow filter: small Gaussian blur merged behind the source. */}
           <filter id="dp-glow" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="2.4" result="blur" />
             <feMerge>
@@ -174,7 +174,7 @@ export function DarkPipeline({ className = '' }: { className?: string }) {
                 stroke="#3a2541"
                 strokeWidth="1"
               />
-              {/* Glow accent on left edge — small magenta bar */}
+              {/* Glow accent on left edge: small magenta bar */}
               <rect
                 x={SCM_X}
                 y={y + 14}
@@ -264,7 +264,7 @@ export function DarkPipeline({ className = '' }: { className?: string }) {
           </text>
         </g>
 
-        {/* Detector pool — outer container */}
+        {/* Detector pool: outer container */}
         <g>
           <rect
             x={POOL_X}

@@ -7,7 +7,7 @@ import { SarifExcerpt } from '@/components/sarif-excerpt'
 import { getRepoProof, repoUrl } from '@/lib/proof'
 
 export const metadata = {
-  title: 'Scanipy CLI — research-mode security scanner for OSS CVE hunting',
+  title: 'Scanipy CLI · research-mode security scanner for OSS CVE hunting',
   description:
     'The Scanipy CLI is free, MIT, and built for OSS CVE hunting. Tiered-star GitHub search, Semgrep + local CodeQL. Same class-specific philosophy as the platform.',
 }
@@ -32,7 +32,7 @@ export default async function CliPage() {
               <p className="mt-6 text-lg text-foreground/70 leading-relaxed max-w-2xl">
                 Tiered-star GitHub code search, Semgrep, and local CodeQL,
                 wrapped as a single Python CLI. Same class-specific
-                philosophy as the platform &mdash; just packaged for one
+                philosophy as the platform, just packaged for one
                 researcher on one laptop.
               </p>
               <div className="mt-5">
@@ -100,7 +100,7 @@ export default async function CliPage() {
               Real proof.
             </h2>
             <p className="mt-4 text-foreground/70 leading-relaxed">
-              CVE-2025-61765 &mdash; <em>Unsafe Pickle Deserialization</em> in
+              CVE-2025-61765, <em>Unsafe Pickle Deserialization</em> in
               the{' '}
               <Link
                 href="https://github.com/miguelgrinberg/python-socketio"

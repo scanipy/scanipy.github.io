@@ -1,7 +1,7 @@
 /**
  * Single source of truth for the academic references the site cites.
  *
- * Five entries — five distinct references across the homepage. Adding
+ * Five entries: five distinct references across the homepage. Adding
  * a sixth pads the section and weakens the others; if a new reference
  * lands here, audit whether one of the existing five should retire.
  *
@@ -70,7 +70,7 @@ export const citations: Record<CitationId, Citation> = {
     year: 2021,
     url: 'https://mariana-tren.ch/',
     oneLineGist:
-      'Detectors ship as (rules + queries + source/sink models) — the Mariana Trench, Pysa, and FlowDroid pattern.',
+      'Detectors ship as (rules + queries + source/sink models): the Mariana Trench, Pysa, and FlowDroid pattern.',
   },
   'cwe-1000': {
     id: 'cwe-1000',

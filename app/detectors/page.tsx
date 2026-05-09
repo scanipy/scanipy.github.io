@@ -5,7 +5,7 @@ import { DemoCTA } from '@/components/demo-cta'
 import { detectors } from '@/lib/detectors'
 
 export const metadata = {
-  title: 'Detectors — Scanipy',
+  title: 'Detectors · Scanipy',
   description:
     'The full Scanipy detector catalog: ten vulnerability classes, two GA today, eight scaffolded with manifests and shipping content as it lands.',
 }
@@ -34,7 +34,7 @@ export default function DetectorsPage() {
             </h1>
             <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-2xl">
               Scanipy is detector-driven, not engine-driven. Each class
-              is its own bundle &mdash; rules plus queries plus
+              is its own bundle: rules plus queries plus
               source/sink models. Roadmap classes have manifests today
               and ship content as it lands.
             </p>

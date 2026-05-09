@@ -52,8 +52,8 @@ export default function Home() {
               </h1>
               <p className="mt-8 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
                 Scanipy runs ten focused detectors against one snapshot
-                of your code &mdash; across GitHub, GitLab, Bitbucket,
-                and Azure DevOps. Findings carry stable fingerprints, so
+                of your code, across GitHub, GitLab, Bitbucket, and
+                Azure DevOps. Findings carry stable fingerprints, so
                 re-scans collapse onto the same row instead of
                 multiplying.
               </p>

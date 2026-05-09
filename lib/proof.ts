@@ -1,6 +1,6 @@
 /**
  * Build-time GitHub stars fetch for the homepage proof band and the CLI
- * page chip. Static export means there's no ISR — whatever we read at
+ * page chip. Static export means there's no ISR; whatever we read at
  * `next build` is what ships, until the next deploy.
  *
  * `STAR_FALLBACK` is the floor the page renders when the fetch fails
