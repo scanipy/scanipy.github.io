@@ -1,7 +1,7 @@
 import { SectionEyebrow } from '@/components/section-eyebrow'
 
 /**
- * The "why not grep" band — a 4/8 split with the eyebrow + H2 on the
+ * The "why not grep" band: a 4/8 split with the eyebrow + H2 on the
  * left and a real comparison table on the right. Sat on `bg-muted/30`
  * to break visual rhythm vs. the surrounding white sections.
  */

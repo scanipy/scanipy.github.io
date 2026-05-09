@@ -13,7 +13,7 @@ export const metadata = {
 /**
  * The credibility document. Five references rendered as a long-form
  * bibliography. No CTA, no chrome beyond `<SiteNav />` and `<SiteFooter />`.
- * Linked only from the footer — never from the homepage hero or body.
+ * Linked only from the footer (never from the homepage hero or body).
  */
 export default function ResearchPage() {
   const items = Object.values(citations)
@@ -31,9 +31,9 @@ export default function ResearchPage() {
             Scanipy&rsquo;s architecture borrows from a small set of
             published works in program analysis and applied security
             research. We list them here so the technical claims on the
-            rest of the site &mdash; class-specific detection, one-graph
-            snapshots, deterministic fingerprints, LLM-augmented triage
-            &mdash; are verifiable against their sources.
+            rest of the site (class-specific detection, one-graph
+            snapshots, deterministic fingerprints, LLM-augmented
+            triage) are verifiable against their sources.
           </p>
 
           <ol className="mt-14 space-y-10 list-none">
@@ -46,7 +46,7 @@ export default function ResearchPage() {
                   {c.oneLineGist}
                 </p>
                 <p className="text-sm text-foreground/55 leading-relaxed">
-                  {c.authors} &mdash;{' '}
+                  {c.authors}.{' '}
                   <Link
                     href={c.url}
                     target="_blank"

@@ -2,7 +2,7 @@
  * The v2 vulnerability-class catalog.
  *
  * Mirrors the ten-class table in `scanipy/PLAN.md` (lines 73-89). Two
- * classes ship at GA — path-traversal and memory-safety — because those
+ * classes ship at GA (path-traversal and memory-safety) because those
  * are the only two with shipping detector content as of the v2 beta.
  * The other eight are listed honestly as Roadmap so the page reads as
  * a public, candid catalog rather than an aspirational marketing list.
@@ -12,7 +12,7 @@
  *   - A new vulnerability class is added to PLAN.md.
  *
  * The detector-catalog table component renders straight from this
- * array — keep entries in the order PLAN.md uses so a reader can
+ * array. Keep entries in the order PLAN.md uses so a reader can
  * cross-reference without re-sorting.
  */
 

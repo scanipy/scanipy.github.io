@@ -18,7 +18,7 @@ export default function DocsLayout({
     <div className="min-h-screen bg-background flex flex-col">
       <SiteNav showDocs />
 
-      {/* CLI-only-docs banner — surfaces the scope of these docs to a
+      {/* CLI-only-docs banner: surfaces the scope of these docs to a
           visitor who lands deep in the docs tree without coming through
           the marketing site first. */}
       <div className="border-b border-border/50 bg-muted/40 pt-20">

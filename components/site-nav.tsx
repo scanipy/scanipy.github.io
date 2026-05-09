@@ -17,7 +17,7 @@ import { DemoCTA } from '@/components/demo-cta'
 
 interface SiteNavProps {
   /**
-   * Reserved for backwards compatibility — the redesigned nav surfaces
+   * Reserved for backwards compatibility; the redesigned nav surfaces
    * Docs through the Resources dropdown on every page, so the prop is
    * accepted but no longer changes the desktop link set.
    */
@@ -77,7 +77,7 @@ const RESOURCE_LINKS: {
  * right. Mobile collapses everything into a sheet.
  *
  * `variant="on-dark"` is used on the `/` hero so the nav inherits the
- * dark band's surface — same component, different chrome.
+ * dark band's surface: same component, different chrome.
  */
 export function SiteNav({ variant = 'default' }: SiteNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -121,7 +121,7 @@ export function SiteNav({ variant = 'default' }: SiteNavProps) {
             </Link>
           ))}
 
-          {/* Resources dropdown — group-hover/focus-within driven, no JS */}
+          {/* Resources dropdown: group-hover/focus-within driven, no JS */}
           <div className="relative group">
             <button
               type="button"

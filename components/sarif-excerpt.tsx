@@ -1,5 +1,5 @@
 /**
- * A small syntax-highlighted code block — used for SARIF / CLI command
+ * A small syntax-highlighted code block, used for SARIF / CLI command
  * snippets in the homepage and CLI page. Pre-rendered to keep the
  * static-export build fast; we apply a single foreground colour so it
  * works in both light and dark mode without an extra theme switch.

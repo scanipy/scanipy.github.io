@@ -2,12 +2,12 @@ import { SectionEyebrow } from '@/components/section-eyebrow'
 import { GitMerge, Database, Cpu, Fingerprint } from 'lucide-react'
 
 /**
- * "How it works" — four-stage horizontal stepper. Distinct from the
+ * "How it works": four-stage horizontal stepper. Distinct from the
  * hero's DarkPipeline (which shows the data flow at the architectural
  * level); this section is the *user* journey from connect to triage.
  *
- * Connector lines (the dashed path between cards) draw on desktop only
- * — they degrade to nothing on mobile so the column stack reads cleanly.
+ * Connector lines (the dashed path between cards) draw on desktop only;
+ * they degrade to nothing on mobile so the column stack reads cleanly.
  */
 
 const STAGES: Array<{
@@ -31,7 +31,7 @@ const STAGES: Array<{
   {
     n: '03',
     title: 'Scan',
-    body: 'Fan out to enabled detectors in parallel. Each detector is class-specific — its own rules, its own taint specs.',
+    body: 'Fan out to enabled detectors in parallel. Each detector is class-specific, with its own rules and its own taint specs.',
     icon: Cpu,
   },
   {
@@ -52,13 +52,13 @@ export function HowItWorks() {
         </h2>
         <p className="mt-4 text-foreground/70 leading-relaxed">
           From the first webhook to the first finding in the dashboard,
-          four stages — every one of them auditable, deterministic, and
+          four stages, every one of them auditable, deterministic, and
           replayable on demand.
         </p>
       </div>
 
       <div className="relative">
-        {/* Dashed connector — desktop only. Sits behind the cards. */}
+        {/* Dashed connector: desktop only. Sits behind the cards. */}
         <div
           aria-hidden
           className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-border/60"

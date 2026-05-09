@@ -41,7 +41,7 @@ function preprocessAdmonitions(markdown: string): string {
           body.push(lines[i].replace(/^\s{4}/, ''))
           i++
         } else if (lines[i].trim() === '') {
-          // Blank line — include if the next line is still indented
+          // Blank line: include if the next line is still indented
           if (i + 1 < lines.length && lines[i + 1].match(/^\s{4}/)) {
             body.push('')
             i++

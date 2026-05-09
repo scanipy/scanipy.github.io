@@ -6,7 +6,7 @@ import { DarkPipeline } from '@/components/dark-pipeline'
 import { Layers, GitBranch, Shield } from 'lucide-react'
 
 export const metadata = {
-  title: 'Platform — Scanipy',
+  title: 'Platform · Scanipy',
   description:
     'The Scanipy platform: one snapshot per commit, fanned out to class-specific detectors, written into a single findings store with stable fingerprints. Multi-SCM, multi-tenant, deterministic by default.',
 }
@@ -54,7 +54,7 @@ export default function PlatformPage() {
               <p className="text-foreground/70 leading-relaxed">
                 The snapshotter clones, builds the graph, and writes the
                 CodeQL DBs once per (codebase, commit). Every detector in
-                the pool reads the same artefacts &mdash; adding a new
+                the pool reads the same artefacts, so adding a new
                 class costs zero re-clones, zero re-parses.
               </p>
             </article>
@@ -66,8 +66,8 @@ export default function PlatformPage() {
               <p className="text-foreground/70 leading-relaxed">
                 Each detector is a manifest plus a rule set plus the
                 source/sink models for one CWE class. The worker reads
-                the manifest and runs the right tool &mdash; Semgrep,
-                CodeQL, or a hybrid &mdash; per class.
+                the manifest and runs the right tool (Semgrep,
+                CodeQL, or a hybrid) per class.
               </p>
             </article>
             <article>
@@ -77,7 +77,7 @@ export default function PlatformPage() {
               </h2>
               <p className="text-foreground/70 leading-relaxed">
                 One contract, four providers. Webhook verification,
-                clone, ref resolution, repo listing &mdash; the same
+                clone, ref resolution, repo listing: the same
                 surface for GitHub, GitLab, Bitbucket, and Azure DevOps,
                 cloud or self-hosted.
               </p>

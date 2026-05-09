@@ -2,8 +2,8 @@
  * The four SCM providers scanipy v2 connects to. Each tile on the
  * homepage's SCM-coverage section renders straight from this array.
  *
- * The notes column is one line each — auth modes and self-hosted
- * support — pulled from the v2 beta's connector implementations
+ * The notes column is one line each (auth modes and self-hosted
+ * support), pulled from the v2 beta's connector implementations
  * (`integrations/scm/{github,gitlab,bitbucket,ado}.py`).
  */
 

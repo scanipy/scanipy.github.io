@@ -5,7 +5,7 @@ import { DemoCTA } from '@/components/demo-cta'
 import { Check } from 'lucide-react'
 
 export const metadata = {
-  title: 'Pricing — Scanipy',
+  title: 'Pricing · Scanipy',
   description:
     'Scanipy pricing: a single design-partner tier today, scoped per codebase and per detector class. Open-source CLI is and will remain free.',
 }
@@ -14,7 +14,7 @@ const PARTNER_INCLUDES = [
   'Unlimited scans across enabled detector classes',
   'All four SCM connectors: GitHub, GitLab, Bitbucket, Azure DevOps',
   'Dedicated onboarding and a Slack channel with the team',
-  'Roadmap input — your CWE classes get prioritised',
+  'Roadmap input: your CWE classes get prioritised',
   'Stable-fingerprint baselines, suppression, audit trail',
 ]
 
@@ -58,7 +58,7 @@ export default function PricingPage() {
                 Design partner
               </div>
               <h2 className="text-2xl font-semibold text-foreground tracking-tight mb-2">
-                Platform &mdash; design partner tier
+                Platform · design partner tier
               </h2>
               <p className="text-foreground/65 mb-6 leading-relaxed">
                 Pricing is a flat monthly retainer scoped to your
@@ -127,8 +127,8 @@ export default function PricingPage() {
           <div className="space-y-6 text-foreground/75 leading-relaxed">
             <p>
               <strong className="text-foreground">No per-finding pricing.</strong>{' '}
-              Charging per finding aligns the wrong incentives &mdash;
-              it pushes the platform towards more findings, not better
+              Charging per finding aligns the wrong incentives. It
+              pushes the platform towards more findings, not better
               ones.
             </p>
             <p>
@@ -140,7 +140,7 @@ export default function PricingPage() {
               <strong className="text-foreground">No locking the CLI behind a paywall.</strong>{' '}
               The CLI is and will remain MIT. The platform offers things
               the CLI can&rsquo;t (multi-SCM, multi-tenant, shared
-              snapshots) &mdash; the split is genuine, not artificial.
+              snapshots), so the split is genuine, not artificial.
             </p>
           </div>
         </section>

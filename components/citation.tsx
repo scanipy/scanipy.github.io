@@ -20,7 +20,7 @@ interface CitationProps {
  * link with `target="_blank"` and `rel="noopener noreferrer"`.
  *
  * Used by the `/research` bibliography page. Not used in marketing-page
- * body copy — those pages link to `/research` from the footer instead.
+ * body copy; those pages link to `/research` from the footer instead.
  */
 export function Citation({ id, showGist = true }: CitationProps) {
   const c = citations[id]
@@ -28,7 +28,7 @@ export function Citation({ id, showGist = true }: CitationProps) {
     <div className="text-xs text-foreground/55 leading-relaxed">
       {showGist && <p className="mb-1">{c.oneLineGist}</p>}
       <p>
-        {c.authors} —{' '}
+        {c.authors}.{' '}
         <Link
           href={c.url}
           target="_blank"
