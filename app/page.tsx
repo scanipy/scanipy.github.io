@@ -29,13 +29,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Animated gradient orbs */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl animate-pulse" />
-        <div className="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl animate-pulse [animation-delay:2s]" />
-        <div className="absolute bottom-[-10%] left-[30%] w-[400px] h-[400px] rounded-full bg-secondary/5 blur-3xl animate-pulse [animation-delay:4s]" />
-      </div>
-
       {/* ─── Floating Pill Navbar ─── */}
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-3xl">
         <div className="bg-background/70 backdrop-blur-xl border border-border/50 rounded-full px-4 py-2.5 flex items-center justify-between shadow-lg shadow-primary/5">
