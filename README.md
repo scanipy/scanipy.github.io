@@ -20,6 +20,7 @@ npm run build    # static export to ./out
 |---|---|---|
 | `/` | `app/page.tsx` | SaaS marketing pitch — the v2 platform |
 | `/cli` | `app/cli/page.tsx` | The open-source CLI (research-mode framing) |
+| `/research` | `app/research/page.tsx` | Academic-bibliography credibility doc (footer-linked only) |
 | `/docs/...` | `app/docs/[[...slug]]/page.tsx` | CLI documentation (banner makes the scope explicit) |
 
 The top nav is context-sensitive via `<SiteNav showDocs?: boolean>`:
@@ -37,7 +38,8 @@ Three constants drive most of the visible copy. Edit these instead of the page b
 | [`lib/cta.ts`](lib/cta.ts) | `demoBookingUrl` — the "Get a demo" target. Replace the placeholder Cal.com URL with your real booking link. |
 | [`lib/detectors.ts`](lib/detectors.ts) | The 10-class catalog table. Move a class from `roadmap` to `ga` here when its content ships. |
 | [`lib/scms.ts`](lib/scms.ts) | The four SCM-coverage tiles (auth-mode notes). |
-| [`lib/citations.ts`](lib/citations.ts) | The five academic references rendered by `<Citation />` — cap is five; if a sixth lands, retire one. |
+| [`lib/proof.ts`](lib/proof.ts) | Build-time GitHub-stars fetch for the proof band. `STAR_FALLBACK` is the floor a failed network fetch falls back to — bump it to roughly track reality so a broken build doesn't visibly under-state social proof. |
+| [`lib/citations.ts`](lib/citations.ts) | The five academic references rendered on `/research`. Cap is five; if a sixth lands, retire one. |
 | [`lib/site.ts`](lib/site.ts) | `siteTitle`, `siteDescription` — used in the `<title>` tag and OG / Twitter cards. |
 
 ## Anti-"AI-generated default" rules in force
@@ -45,11 +47,12 @@ Three constants drive most of the visible copy. Edit these instead of the page b
 Don't ship copy that violates these — they're the levers that keep this site from reading like a v0.app scaffold.
 
 1. **No vague stats.** No "1M+ scanned" / "millions of repos." If a number ships, it cites a specific advisory.
-2. **No banned generic adjectives.** A pre-deploy grep on the static export checks for `powerful|robust|advanced|seamless|unleash|supercharge|comprehensive|transformative|empower`. Zero matches expected.
-3. **One CTA per page.** `<DemoCTA />` is the only conversion target. No `[Get a demo] [See pricing]` pairs.
-4. **No fake customer logos.** The SCM grid renders text wordmarks, not vendor logo PNGs.
-5. **Cite real research.** Every architectural claim that names a paper carries an `<Citation id="..." />` link. Five references max.
-6. **Real artefacts inline.** SARIF excerpts and CLI command snippets are real syntax (no fake-looking terminal mockups).
+2. **No banned generic adjectives.** A pre-deploy grep on `out/index.html` and `out/cli.html` checks for `powerful|robust|advanced|seamless|unleash|supercharge|comprehensive|transformative|empower`. Zero matches expected.
+3. **No academic citations on marketing pages.** The marketing audience doesn't lead with academic references; the same grep also flags `Yamaguchi|Engler|IRIS|Mariana|CWE-1000` as zero-match on the homepage and `/cli`. Those references live on `/research` instead, footer-linked only.
+4. **One CTA per page.** `<DemoCTA />` is the only conversion target on `/`. No `[Get a demo] [See pricing]` pairs.
+5. **No fake customer logos.** The proof band renders SCM wordmarks + a build-time GitHub stars chip + a real CVE chip. No vendor-logo PNGs masquerading as customers.
+6. **Real artefacts inline.** SARIF excerpts, CLI command snippets, and the dataflow pipeline are real syntax / real architecture (no fake-looking terminal mockups).
+7. **Editorial layout cues.** Every H2 carries a `<SectionEyebrow>` label (small caps, tracking-wide). That single rule is the strongest "this isn't a v0 scaffold" tell.
 
 ## Asset gaps to close before launch
 

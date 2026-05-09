@@ -1,18 +1,20 @@
 import Link from 'next/link'
-import { ArrowRight, Github, ExternalLink } from 'lucide-react'
+import { ArrowRight, Github, ExternalLink, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SiteNav } from '@/components/site-nav'
 import { SiteFooter } from '@/components/site-footer'
-import { Citation } from '@/components/citation'
 import { SarifExcerpt } from '@/components/sarif-excerpt'
+import { getRepoProof, repoUrl } from '@/lib/proof'
 
 export const metadata = {
   title: 'Scanipy CLI — research-mode security scanner for OSS CVE hunting',
   description:
-    'The Scanipy CLI is free, MIT, and built for OSS CVE hunting. Tiered-star GitHub search, Semgrep + local CodeQL. Same class-specific-checker philosophy as the platform.',
+    'The Scanipy CLI is free, MIT, and built for OSS CVE hunting. Tiered-star GitHub search, Semgrep + local CodeQL. Same class-specific philosophy as the platform.',
 }
 
-export default function CliPage() {
+export default async function CliPage() {
+  const { stars } = await getRepoProof()
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SiteNav showDocs />
@@ -23,18 +25,29 @@ export default function CliPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <div className="lg:col-span-7">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.05]">
-                The Scanipy CLI is free, MIT,
+                Free, MIT, and built for
                 <br />
-                and built for OSS CVE hunting.
+                OSS CVE hunting.
               </h1>
               <p className="mt-6 text-lg text-foreground/70 leading-relaxed max-w-2xl">
                 Tiered-star GitHub code search, Semgrep, and local CodeQL,
-                wrapped as a single Python CLI. Same class-specific-checker
+                wrapped as a single Python CLI. Same class-specific
                 philosophy as the platform &mdash; just packaged for one
                 researcher on one laptop.
               </p>
-              <div className="mt-4">
-                <Citation id="engler-coverity-2010" />
+              <div className="mt-5">
+                <Link
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-foreground/70 hover:text-foreground border border-border/60 hover:border-border bg-background/60 rounded-full px-3 py-1.5 transition"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>papadoxie/scanipy</span>
+                  <span className="opacity-40">·</span>
+                  <Star className="w-3 h-3 fill-current" />
+                  <span className="font-mono tabular-nums">{stars}</span>
+                </Link>
               </div>
             </div>
 
@@ -44,7 +57,7 @@ export default function CliPage() {
               </SarifExcerpt>
               <Button asChild variant="outline" size="lg" className="w-full">
                 <Link
-                  href="https://github.com/papadoxie/scanipy"
+                  href={repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -60,25 +73,22 @@ export default function CliPage() {
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 border-t border-border/40">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-5">
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
                 What it does.
               </h2>
             </div>
             <div className="lg:col-span-7 space-y-4 text-foreground/70 leading-relaxed">
               <p>
-                Search GitHub for code patterns at scale. Filter by language
-                and stars; the tiered-star strategy walks repositories in
-                star buckets so popular projects come first.
+                Search GitHub for code patterns at scale. Filter by
+                language and stars; the tiered-star strategy walks
+                repositories in star buckets.
               </p>
               <p>
                 Each match is cloned and analysed with Semgrep against
-                custom rules; CodeQL runs locally for semantic queries on
-                C, C++, Java, Python, and more.
+                custom rules; CodeQL runs locally for semantic queries
+                on C, C++, Java, Python, and more.
               </p>
-              <p>
-                Sessions are resumable. Long runs can be interrupted and
-                continued without re-cloning everything.
-              </p>
+              <p>Sessions are resumable, so long runs survive interruptions.</p>
             </div>
           </div>
         </section>
@@ -86,7 +96,7 @@ export default function CliPage() {
         {/* ─── 3. Real proof ─── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 border-t border-border/40">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
               Real proof.
             </h2>
             <p className="mt-4 text-foreground/70 leading-relaxed">
@@ -129,7 +139,7 @@ export default function CliPage() {
         {/* ─── 4. Quick start ─── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 border-t border-border/40">
           <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-6 tracking-tight">
               Quick start.
             </h2>
             <SarifExcerpt language="shell" caption="install">
@@ -157,7 +167,7 @@ python scanipy.py --query "extractall" \\
         {/* ─── 5. When to use CLI vs platform ─── */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 border-t border-border/40">
           <div className="max-w-3xl mb-8">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
               CLI or platform.
             </h2>
             <p className="mt-3 text-foreground/70 leading-relaxed">
@@ -198,12 +208,12 @@ python scanipy.py --query "extractall" \\
                   scale, across heterogeneous SCMs.
                 </li>
                 <li>
-                  You want one Code Property Graph per commit shared
-                  across many class-specific detectors.
+                  You want one snapshot per commit shared across many
+                  class-specific detectors.
                 </li>
                 <li>
                   You need stable fingerprints, baselines, suppression,
-                  and a CWE-1000 anchored compliance trail.
+                  and a compliance trail.
                 </li>
                 <li>
                   You want LLM-augmented triage with a hard kill switch.

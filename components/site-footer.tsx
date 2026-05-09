@@ -36,6 +36,12 @@ export function SiteFooter() {
               Docs
             </Link>
             <Link
+              href="/research"
+              className="text-foreground/50 hover:text-foreground transition"
+            >
+              Research
+            </Link>
+            <Link
               href="https://github.com/papadoxie/scanipy/security/advisories"
               target="_blank"
               rel="noopener noreferrer"
