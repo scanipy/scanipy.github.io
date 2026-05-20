@@ -1,65 +1,56 @@
 import Link from 'next/link'
-import { Github } from 'lucide-react'
 
-/**
- * Slim site-wide footer. Always carries a `Docs` link so a visitor on
- * `/` can reach the CLI documentation in one click without `/cli` as
- * an intermediate hop.
- */
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border/50 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img
-              src="/scanipy-logo.svg"
-              alt="Scanipy Logo"
-              className="w-5 h-5"
-            />
-            <span className="text-sm text-foreground/60">
-              © {new Date().getFullYear()} Scanipy.
-            </span>
+    <footer className="scn-footer">
+      <div className="scn-footer-grid">
+        <div className="scn-footer-brand">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <img src="/scanipy-mark-light.svg" width={26} alt="" />
+            <span className="wordmark">scanipy</span>
           </div>
-
-          <div className="flex items-center gap-6 text-sm">
-            <Link
-              href="/cli"
-              className="text-foreground/50 hover:text-foreground transition"
-            >
-              CLI
-            </Link>
-            <Link
-              href="/docs"
-              className="text-foreground/50 hover:text-foreground transition"
-            >
-              Docs
-            </Link>
-            <Link
-              href="/research"
-              className="text-foreground/50 hover:text-foreground transition"
-            >
-              Research
-            </Link>
-            <Link
-              href="https://github.com/papadoxie/scanipy/security/advisories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition"
-            >
-              Security
-            </Link>
-            <Link
-              href="https://github.com/papadoxie/scanipy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground/50 hover:text-foreground transition"
-              aria-label="View on GitHub"
-            >
-              <Github className="w-4 h-4" />
-            </Link>
-          </div>
+          <p>Static security analysis with reproducibility, incrementality, and machine-checkable provenance. Built for engineering teams that audit their own results.</p>
         </div>
+        <div>
+          <h5>Product</h5>
+          <ul>
+            <li><Link href="/features">Features</Link></li>
+            <li><Link href="/demo">Demo</Link></li>
+            <li><Link href="/pricing">Pricing</Link></li>
+            <li><Link href="#">Changelog</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Company</h5>
+          <ul>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="#">Careers</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Resources</h5>
+          <ul>
+            <li><Link href="/docs">Documentation</Link></li>
+            <li><Link href="#">Determinism whitepaper</Link></li>
+            <li><Link href="#">Honest-labeling ledger</Link></li>
+            <li><Link href="#">Open source</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Trust</h5>
+          <ul>
+            <li><Link href="#">SOC 2 Type II</Link></li>
+            <li><Link href="#">Security</Link></li>
+            <li><Link href="#">Privacy</Link></li>
+            <li><Link href="#">Terms</Link></li>
+          </ul>
+        </div>
+      </div>
+      <div className="scn-footer-bottom">
+        <span>© {new Date().getFullYear()} scanipy, inc. All rights reserved.</span>
+        <span className="note">made for teams that read their own results.</span>
       </div>
     </footer>
   )

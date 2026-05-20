@@ -1,13 +1,8 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { ThemeProvider } from '@/components/theme-provider'
 import { siteUrl, siteTitle, siteDescription } from '@/lib/site'
 import './globals.css'
-
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -15,20 +10,16 @@ export const metadata: Metadata = {
   description: siteDescription,
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/scanipy-mark-light.svg', type: 'image/svg+xml' },
+      { url: '/scanipy-favicon.ico', type: 'image/x-icon' },
+      { url: '/scanipy-favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/scanipy-favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/scanipy-favicon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/scanipy-favicon-128.png', sizes: '128x128', type: 'image/png' },
+      { url: '/scanipy-favicon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/scanipy-favicon-256.png', sizes: '256x256', type: 'image/png' },
+      { url: '/scanipy-favicon-512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: '/apple-icon.png',
   },
   openGraph: {
     type: 'website',
@@ -59,16 +50,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body style={{ fontFamily: "var(--font-body)" }}>
+        {children}
         <Analytics />
       </body>
     </html>

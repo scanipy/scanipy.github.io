@@ -1,152 +1,163 @@
+import Link from 'next/link'
 import { SiteNav } from '@/components/site-nav'
 import { SiteFooter } from '@/components/site-footer'
-import { SectionEyebrow } from '@/components/section-eyebrow'
-import { DemoCTA } from '@/components/demo-cta'
-import { Check } from 'lucide-react'
+import { ScrollEffects } from '@/components/scroll-effects'
 
 export const metadata = {
-  title: 'Pricing · Scanipy',
-  description:
-    'Scanipy pricing: a single design-partner tier today, scoped per codebase and per detector class. Open-source CLI is and will remain free.',
+  title: 'Pricing — scanipy',
+  description: 'Free for open source. Per-developer for teams. Custom for the enterprise.',
 }
-
-const PARTNER_INCLUDES = [
-  'Unlimited scans across enabled detector classes',
-  'All four SCM connectors: GitHub, GitLab, Bitbucket, Azure DevOps',
-  'Dedicated onboarding and a Slack channel with the team',
-  'Roadmap input: your CWE classes get prioritised',
-  'Stable-fingerprint baselines, suppression, audit trail',
-]
-
-const CLI_INCLUDES = [
-  'Tiered-star GitHub code search at scale',
-  'Local Semgrep against custom rules',
-  'Local CodeQL for semantic queries',
-  'Resumable sessions for long runs',
-]
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <SiteNav />
+    <>
+      <SiteNav activePage="pricing" />
+      <ScrollEffects />
 
-      <main className="flex-1">
-        {/* Hero */}
-        <section className="bg-[#0f0a12] text-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 md:pt-40 md:pb-20 text-center">
-            <SectionEyebrow>
-              <span className="text-white/60">Pricing</span>
-            </SectionEyebrow>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] max-w-3xl mx-auto">
-              We&rsquo;re onboarding design partners.
-            </h1>
-            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Standard SaaS tiers will land once we&rsquo;ve scanned
-              enough real codebases to price honestly. Until then,
-              there&rsquo;s a single design-partner tier and the
-              free open-source CLI.
-            </p>
-          </div>
-        </section>
+      <section className="page-head">
+        <span className="type-section">Pricing</span>
+        <h1 className="type-heading">Simple, honest, and free where it matters.</h1>
+        <p className="type-lede">Open source is free forever. Small teams ship without paperwork. The enterprise edition adds compliance and the determinism attestor, not your security results.</p>
+      </section>
 
-        {/* Two cards: design partner + CLI */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Design partner */}
-            <article className="rounded-2xl border-2 border-primary/40 bg-card p-8 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 right-0 px-3 py-1 text-[11px] font-medium uppercase tracking-wider bg-primary text-primary-foreground rounded-bl-lg">
-                Design partner
-              </div>
-              <h2 className="text-2xl font-semibold text-foreground tracking-tight mb-2">
-                Platform · design partner tier
-              </h2>
-              <p className="text-foreground/65 mb-6 leading-relaxed">
-                Pricing is a flat monthly retainer scoped to your
-                codebase count and the detector classes you enable.
-              </p>
-              <p className="text-3xl font-bold text-foreground mb-1">
-                Talk to us
-              </p>
-              <p className="text-sm text-foreground/55 mb-6">
-                Honest scoping in one call.
-              </p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {PARTNER_INCLUDES.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed"
-                  >
-                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
+      <section className="section bone" style={{ paddingTop: 0 }}>
+        <div style={{ maxWidth: 'var(--maxw)', margin: '0 auto' }}>
+          <div className="price-grid">
+            <div className="price-card reveal">
+              <div className="tier">Free</div>
+              <div className="price">$0<span className="per">forever</span></div>
+              <p className="desc">For individual developers, open-source maintainers, and small projects.</p>
+              <ul>
+                <li>Unlimited public repositories</li>
+                <li>1 private repository</li>
+                <li>Up to 3 collaborators</li>
+                <li>All deterministic-core detectors</li>
+                <li>SARIF export</li>
+                <li>Community support</li>
               </ul>
-              <DemoCTA size="lg" className="w-full" />
-            </article>
+              <Link href="/signin#signup" className="btn btn-ghost cta">Start free</Link>
+            </div>
 
-            {/* CLI */}
-            <article className="rounded-2xl border border-border/60 bg-card/40 p-8 flex flex-col">
-              <div className="px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-foreground/60 self-start mb-4">
-                Free
-              </div>
-              <h2 className="text-2xl font-semibold text-foreground tracking-tight mb-2">
-                Open-source CLI
-              </h2>
-              <p className="text-foreground/65 mb-6 leading-relaxed">
-                The free, MIT-licensed command-line scanner. For
-                researchers, security folk, and one-laptop CVE hunting.
-              </p>
-              <p className="text-3xl font-bold text-foreground mb-1">$0</p>
-              <p className="text-sm text-foreground/55 mb-6">Forever.</p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {CLI_INCLUDES.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed"
-                  >
-                    <Check className="w-4 h-4 text-foreground/55 mt-0.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
+            <div className="price-card featured reveal">
+              <span className="badge">Most popular</span>
+              <div className="tier">Team</div>
+              <div className="price">$29<span className="per">/ developer / month</span></div>
+              <p className="desc">For engineering teams who want every PR scanned, attested, and triaged.</p>
+              <ul>
+                <li>Unlimited private repositories</li>
+                <li>Unlimited collaborators</li>
+                <li>GitHub, GitLab, Bitbucket &amp; Azure DevOps</li>
+                <li>LLM-assisted triage</li>
+                <li>Jira, Slack &amp; Linear integrations</li>
+                <li>30-day finding history</li>
+                <li>Priority email support</li>
               </ul>
-              <a
-                href="/cli"
-                className="block w-full text-center px-4 py-2.5 rounded-md border border-border hover:bg-muted/50 transition text-sm font-medium text-foreground"
-              >
-                See the CLI
-              </a>
-            </article>
-          </div>
-        </section>
+              <Link href="/signin#signup" className="btn btn-primary cta">Start 14-day trial</Link>
+            </div>
 
-        {/* FAQ-ish closing */}
-        <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 border-t border-border/40">
-          <h2 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight mb-8">
-            What we don&rsquo;t do.
-          </h2>
-          <div className="space-y-6 text-foreground/75 leading-relaxed">
-            <p>
-              <strong className="text-foreground">No per-finding pricing.</strong>{' '}
-              Charging per finding aligns the wrong incentives. It
-              pushes the platform towards more findings, not better
-              ones.
-            </p>
-            <p>
-              <strong className="text-foreground">No per-developer seat tax.</strong>{' '}
-              Scanipy scans codebases, not developers; pricing should
-              follow the artefact, not the headcount.
-            </p>
-            <p>
-              <strong className="text-foreground">No locking the CLI behind a paywall.</strong>{' '}
-              The CLI is and will remain MIT. The platform offers things
-              the CLI can&rsquo;t (multi-SCM, multi-tenant, shared
-              snapshots), so the split is genuine, not artificial.
-            </p>
+            <div className="price-card reveal">
+              <div className="tier">Enterprise</div>
+              <div className="price">Custom</div>
+              <p className="desc">For regulated industries, compliance-bound orgs, and audit-driven teams.</p>
+              <ul>
+                <li>Everything in Team</li>
+                <li>Determinism Attestor (signed provenance)</li>
+                <li>SAML SSO &amp; SCIM</li>
+                <li>Audit logs &amp; data residency</li>
+                <li>Per-customer spec inference</li>
+                <li>Unlimited finding history</li>
+                <li>Dedicated solutions engineer</li>
+                <li>99.9% SLA</li>
+              </ul>
+              <Link href="/contact" className="btn btn-ghost cta">Talk to sales</Link>
+            </div>
           </div>
-        </section>
-      </main>
+
+          <p className="kicker" style={{ textAlign: 'center', marginTop: '32px' }}>Open source projects under a recognised OSS licence pay nothing on the Team plan. Just write to us.</p>
+        </div>
+      </section>
+
+      {/* Compare table */}
+      <section className="section paper">
+        <div style={{ maxWidth: 'var(--maxw-narrow)', margin: '0 auto' }}>
+          <div className="reveal" style={{ textAlign: 'center' }}>
+            <span className="type-section">Compare plans</span>
+            <h2 className="type-heading" style={{ margin: '16px 0 0' }}>What&apos;s in each tier.</h2>
+          </div>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '56px', fontSize: '15px' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid rgba(29,13,62,0.12)' }}>
+                <th style={{ textAlign: 'left', padding: '14px 8px', font: '700 12px/1 var(--font-heading)', letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'var(--scan-graphite)' }}></th>
+                <th style={{ textAlign: 'center', padding: '14px 8px', font: '700 13px/1 var(--font-heading)', color: 'var(--scan-plum-900)' }}>Free</th>
+                <th style={{ textAlign: 'center', padding: '14px 8px', font: '700 13px/1 var(--font-heading)', color: 'var(--scan-berry-600)' }}>Team</th>
+                <th style={{ textAlign: 'center', padding: '14px 8px', font: '700 13px/1 var(--font-heading)', color: 'var(--scan-plum-900)' }}>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody style={{ fontFamily: 'var(--font-body)' }}>
+              {([
+                ['Private repositories', '1', 'Unlimited', 'Unlimited'],
+                ['Deterministic-core detectors', '●', '●', '●'],
+                ['Oracle-passthrough detectors', '●', '●', '●'],
+                ['Incremental analysis', '●', '●', '●'],
+                ['Multi-SCM (GH/GL/BB/ADO)', 'GH only', '●', '●'],
+                ['LLM-assisted triage', '—', '●', '●'],
+                ['Signed provenance & attestor', '—', '—', '●'],
+                ['SAML SSO & SCIM', '—', '—', '●'],
+                ['Per-customer spec inference', '—', '—', '●'],
+                ['Audit logs & data residency', '—', '—', '●'],
+                ['Finding history', '7 days', '30 days', 'Unlimited'],
+                ['Support', 'Community', 'Email', 'Dedicated SE + 99.9% SLA'],
+              ] as const).map(([label, free, team, ent]) => (
+                <tr key={label} style={{ borderBottom: '1px solid rgba(29,13,62,0.06)' }}>
+                  <td style={{ padding: '14px 8px', color: 'var(--scan-graphite)' }}>{label}</td>
+                  <td style={{ textAlign: 'center', color: free === '—' ? 'var(--scan-fog)' : 'var(--scan-ink)' }}>{free}</td>
+                  <td style={{ textAlign: 'center', color: team === '—' ? 'var(--scan-fog)' : 'var(--scan-ink)' }}>{team}</td>
+                  <td style={{ textAlign: 'center', color: ent === '—' ? 'var(--scan-fog)' : 'var(--scan-ink)' }}>{ent}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section bone">
+        <div style={{ maxWidth: 'var(--maxw-narrow)', margin: '0 auto' }}>
+          <div className="reveal center" style={{ marginBottom: '56px' }}>
+            <span className="type-section">Questions</span>
+            <h2 className="type-heading" style={{ margin: '16px 0 0' }}>Pricing, answered.</h2>
+          </div>
+          <div style={{ display: 'grid', gap: '20px' }}>
+            {([
+              ['What counts as a developer?', 'Anyone whose commits scanipy analyses in a billing month. Reviewers, bots, and read-only collaborators are free.'],
+              ['Do you actually offer free OSS?', 'Yes. If your project ships under an OSI-approved licence, the Team plan is free for that repository, regardless of contributor count. Email oss@scanipy.com.'],
+              ['Where does my source code live?', 'Scanipy clones into ephemeral, single-tenant worker containers that are torn down after each scan. The graph and findings persist; the source does not.'],
+              ["Can I run scanipy on-prem?", "Not today. The platform is multi-tenant SaaS. We don't ship a self-hosted runner. We'd rather do one thing well."],
+              ["What's the determinism attestor?", 'An Enterprise-only feature that re-runs every release-gated analysis under pinned spec and environment, asserts the deterministic-core SARIF is byte-identical to the original, and signs the provenance record.'],
+              ['How does annual billing work?', 'Annual prepay gets you two months free. Switch anytime; we prorate on the way down.'],
+            ] as const).map(([q, a]) => (
+              <div className="feature-card reveal" key={q}>
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section dark tight" style={{ textAlign: 'center' }}>
+        <div className="reveal" style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <h2 className="type-heading">Still deciding?</h2>
+          <p className="type-lede" style={{ marginTop: '18px' }}>Run scanipy on one repository, for free, forever. Upgrade only if you outgrow it.</p>
+          <div className="hero-actions" style={{ marginTop: '28px' }}>
+            <Link href="/signin#signup" className="btn btn-primary">Start free</Link>
+            <Link href="/contact" className="btn btn-ghost">Talk to sales →</Link>
+          </div>
+        </div>
+      </section>
 
       <SiteFooter />
-    </div>
+    </>
   )
 }
