@@ -1,3 +1,3 @@
 export const siteUrl = 'https://scanipy.com'
-export const siteTitle = 'Scanipy · Find security bugs by class, across every SCM'
-export const siteDescription = 'Scanipy runs ten focused detectors against one snapshot of your code, across GitHub, GitLab, Bitbucket, and Azure DevOps. Findings carry stable fingerprints, so re-scans collapse onto the same row instead of multiplying.'
+export const siteTitle = 'scanipy — code, understood.'
+export const siteDescription = "Static security analysis that's reproducible by design — every finding witnessed, every result attested. Multi-SCM SAST with deterministic-core findings and machine-checkable provenance."
