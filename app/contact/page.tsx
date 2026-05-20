@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="page-head">
         <span className="type-section">Contact</span>
         <h1 className="type-heading">Talk to a human.</h1>
-        <p className="type-lede">Enterprise pricing, compliance questions, security disclosures — or just to see if scanipy fits. We read every message.</p>
+        <p className="type-lede">Enterprise pricing, compliance questions, security disclosures, or just to see if scanipy fits. We read every message.</p>
       </section>
 
       <section className="section bone" style={{ paddingTop: '0' }}>

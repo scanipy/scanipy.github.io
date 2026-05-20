@@ -17,7 +17,7 @@ export default function FeaturesPage() {
       <section className="page-head">
         <span className="type-section">The product</span>
         <h1 className="type-heading">A SAST tool whose results you can defend.</h1>
-        <p className="type-lede">Most security scanners ship results. Scanipy ships <em>evidence</em> — every finding carries a witness, a fingerprint, and a verifiable provenance chain.</p>
+        <p className="type-lede">Most security scanners ship results. Scanipy ships <em>evidence</em>: every finding carries a witness, a fingerprint, and a verifiable provenance chain.</p>
       </section>
 
       {/* Three pillars */}
@@ -31,7 +31,7 @@ export default function FeaturesPage() {
             <div className="feature-card reveal">
               <div className="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 7l9-4 9 4-9 4-9-4z" /><path d="M3 17l9 4 9-4M3 12l9 4 9-4" /></svg></div>
               <h3>Reproducibility</h3>
-              <p>For a fixed spec set and analysis environment, the deterministic-core partition is a deterministic function of source code. Same code in, same SARIF out — byte for byte.</p>
+              <p>For a fixed spec set and analysis environment, the deterministic-core partition is a deterministic function of source code. Same code in, same SARIF out, byte for byte.</p>
             </div>
             <div className="feature-card reveal">
               <div className="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 17l6-6 4 4 6-6" /><path d="M14 5h6v6" /></svg></div>
@@ -41,7 +41,7 @@ export default function FeaturesPage() {
             <div className="feature-card reveal">
               <div className="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M9 12l2 2 4-4" /></svg></div>
               <h3>Provenance</h3>
-              <p>Every finding ships with a signed chain — source commit, snapshot digest, spec version, env digest, witness, rule id, signature. Auditors verify without re-running.</p>
+              <p>Every finding ships with a signed chain: source commit, snapshot digest, spec version, env digest, witness, rule id, signature. Auditors verify without re-running.</p>
             </div>
           </div>
         </div>
@@ -53,9 +53,9 @@ export default function FeaturesPage() {
           <div className="reveal">
             <span className="type-section">Deterministic core</span>
             <h2 className="type-heading" style={{ margin: '16px 0 18px' }}>Two partitions, honest labels.</h2>
-            <p className="type-lede">Some findings — taint-style classes like injection, path traversal, SSRF, deserialisation — run through a precise IFDS/IDE solver over a canonical code-property graph. We call these <em>deterministic-core</em> and back them with a reproducibility theorem.</p>
-            <p className="type-lede" style={{ marginTop: '16px' }}>Other findings — pattern queries, CodeQL queries, memory-safety on C/C++ — run through external engines. We call these <em>oracle-passthrough</em> and report their measured reproduction rate.</p>
-            <p className="kicker">— Every finding declares its origin. The dashboard never blurs the two.</p>
+            <p className="type-lede">Taint-style classes (injection, path traversal, SSRF, deserialisation) run through a precise IFDS/IDE solver over a canonical code-property graph. We call these <em>deterministic-core</em> and back them with a reproducibility theorem.</p>
+            <p className="type-lede" style={{ marginTop: '16px' }}>Pattern queries, CodeQL queries, and memory-safety checks on C/C++ run through external engines. We call these <em>oracle-passthrough</em> and report their measured reproduction rate.</p>
+            <p className="kicker">Every finding declares its origin. The dashboard never blurs the two.</p>
           </div>
           <div className="reveal">
             <div className="viz-shell" style={{ maxWidth: '480px', marginLeft: 'auto' }}>
@@ -97,7 +97,7 @@ export default function FeaturesPage() {
             <span className="type-section">Incremental by default</span>
             <h2 className="type-heading" style={{ margin: '16px 0 18px' }}>Scan the delta, not the repo.</h2>
             <p className="type-lede">Scanipy treats every commit as a delta against its parent. The code-property graph from the parent commit is reused; only the changed declarations and their transitive callers are re-analysed. Refactor a class? Touch a config file? You pay for the change, not the codebase.</p>
-            <p className="kicker">— On open-world snapshots we publish a median ≥5× speedup, p95 ≥2×, with an explicit fallback rate.</p>
+            <p className="kicker">On open-world snapshots we publish a median ≥5× speedup, p95 ≥2×, with an explicit fallback rate.</p>
           </div>
         </div>
       </section>
@@ -108,8 +108,8 @@ export default function FeaturesPage() {
           <div className="reveal">
             <span className="type-section">Witnesses &amp; fingerprints</span>
             <h2 className="type-heading" style={{ margin: '16px 0 18px' }}>A finding without a witness is a guess.</h2>
-            <p className="type-lede">Every taint-style finding ships with the exact program path that produced it — source statement, every propagation step, sink statement. The witness is content-addressed and signed. Hand it to an engineer and the fix is obvious; hand it to an auditor and the case is closed.</p>
-            <p className="type-lede" style={{ marginTop: '16px' }}>Slice-fingerprints survive cosmetic refactors. Rename, reorder, extract, move — the same vulnerability keeps the same identity. No false-new alerts on style fixes.</p>
+            <p className="type-lede">Every taint-style finding ships with the exact program path that produced it: source statement, every propagation step, sink statement. The witness is content-addressed and signed. Hand it to an engineer and the fix is obvious; hand it to an auditor and the case is closed.</p>
+            <p className="type-lede" style={{ marginTop: '16px' }}>Slice-fingerprints survive cosmetic refactors. Rename, reorder, extract, move: the same vulnerability keeps the same identity. No false-new alerts on style fixes.</p>
           </div>
           <div className="reveal">
             <div className="finding-card" style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(251,247,242,0.08)', maxWidth: '480px', marginLeft: 'auto' }}>

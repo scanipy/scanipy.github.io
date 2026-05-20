@@ -17,7 +17,7 @@ export default function PricingPage() {
       <section className="page-head">
         <span className="type-section">Pricing</span>
         <h1 className="type-heading">Simple, honest, and free where it matters.</h1>
-        <p className="type-lede">Open source is free forever. Small teams ship without paperwork. The enterprise edition adds compliance and the determinism attestor — not your security results.</p>
+        <p className="type-lede">Open source is free forever. Small teams ship without paperwork. The enterprise edition adds compliance and the determinism attestor, not your security results.</p>
       </section>
 
       <section className="section bone" style={{ paddingTop: 0 }}>
@@ -73,7 +73,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <p className="kicker" style={{ textAlign: 'center', marginTop: '32px' }}>— Open source projects under a recognised OSS licence pay nothing on the Team plan. Just write to us.</p>
+          <p className="kicker" style={{ textAlign: 'center', marginTop: '32px' }}>Open source projects under a recognised OSS licence pay nothing on the Team plan. Just write to us.</p>
         </div>
       </section>
 
@@ -130,9 +130,9 @@ export default function PricingPage() {
           <div style={{ display: 'grid', gap: '20px' }}>
             {([
               ['What counts as a developer?', 'Anyone whose commits scanipy analyses in a billing month. Reviewers, bots, and read-only collaborators are free.'],
-              ['Do you actually offer free OSS?', 'Yes. If your project ships under an OSI-approved licence, the Team plan is free for that repository — regardless of contributor count. Email oss@scanipy.com.'],
+              ['Do you actually offer free OSS?', 'Yes. If your project ships under an OSI-approved licence, the Team plan is free for that repository, regardless of contributor count. Email oss@scanipy.com.'],
               ['Where does my source code live?', 'Scanipy clones into ephemeral, single-tenant worker containers that are torn down after each scan. The graph and findings persist; the source does not.'],
-              ["Can I run scanipy on-prem?", "Not today. The platform is multi-tenant SaaS. We don't ship a self-hosted runner — we'd rather do one thing well."],
+              ["Can I run scanipy on-prem?", "Not today. The platform is multi-tenant SaaS. We don't ship a self-hosted runner. We'd rather do one thing well."],
               ["What's the determinism attestor?", 'An Enterprise-only feature that re-runs every release-gated analysis under pinned spec and environment, asserts the deterministic-core SARIF is byte-identical to the original, and signs the provenance record.'],
               ['How does annual billing work?', 'Annual prepay gets you two months free. Switch anytime; we prorate on the way down.'],
             ] as const).map(([q, a]) => (

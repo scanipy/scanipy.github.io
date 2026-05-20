@@ -15,7 +15,7 @@ export default function Home() {
           <span className="type-section eyebrow">Static application security testing · v3.2</span>
           <h1 className="type-title">code, understood.</h1>
           <p className="type-subtitle hero-sub">
-            Security analysis that&apos;s reproducible by design — every finding witnessed, every result attested.
+            Security analysis that&apos;s reproducible by design. Every finding witnessed, every result attested.
           </p>
           <div className="hero-actions">
             <Link href="/signin#signup" className="btn btn-primary">Start free scan</Link>
@@ -100,17 +100,17 @@ export default function Home() {
             {/* LEFT: text panels */}
             <div className="s3-text">
               <div className="s3-panel is-active">
-                <div className="tag">01 — Reproducibility</div>
+                <div className="tag">01 / Reproducibility</div>
                 <h3>Same code in.<br />Same findings out.</h3>
-                <p>Every deterministic-core result is a function of source, a version-pinned spec set, and a pinned environment. Re-run the scan and get the same SARIF — byte for byte. The Attestor fails the build if it doesn&apos;t.</p>
+                <p>Every deterministic-core result is a function of source, a version-pinned spec set, and a pinned environment. Re-run the scan and get the same SARIF, byte for byte. The Attestor fails the build if it doesn&apos;t.</p>
               </div>
               <div className="s3-panel">
-                <div className="tag">02 — Incrementality</div>
+                <div className="tag">02 / Incrementality</div>
                 <h3>Only analyse<br />what changed.</h3>
-                <p>Scanipy reuses the CPG of the parent commit and replays the analysis on the affected slice. Closed-world commits rebuild in time proportional to the semantic delta — not the size of the repository.</p>
+                <p>Scanipy reuses the CPG of the parent commit and replays the analysis on the affected slice. Closed-world commits rebuild in time proportional to the semantic delta, not the size of the repository.</p>
               </div>
               <div className="s3-panel">
-                <div className="tag">03 — Provenance</div>
+                <div className="tag">03 / Provenance</div>
                 <h3>Every finding<br />shows its work.</h3>
                 <p>Every result ships with a signed chain: source commit → snapshot digest → spec version → env digest → taint witness → rule id. Auditors verify findings without re-running the analysis.</p>
               </div>
@@ -185,7 +185,7 @@ export default function Home() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M12 3v18" /><circle cx="12" cy="12" r="9" /></svg>
               </div>
               <h3>Multi-SCM, one connector</h3>
-              <p>GitHub, GitLab, Bitbucket, Azure DevOps — same conformance suite, same fingerprint across providers.</p>
+              <p>GitHub, GitLab, Bitbucket, Azure DevOps: same conformance suite, same fingerprint across providers.</p>
             </div>
             <div className="feature-card reveal">
               <div className="icon">
@@ -199,7 +199,7 @@ export default function Home() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" /><path d="M12 7v5l3 2" /></svg>
               </div>
               <h3>Anytime-valid spec gate</h3>
-              <p>New detection rules clear a precision floor with mathematically defensible guarantees — even under unbounded re-evaluation.</p>
+              <p>New detection rules clear a precision floor with mathematically defensible guarantees, even under unbounded re-evaluation.</p>
             </div>
             <div className="feature-card reveal">
               <div className="icon">
@@ -232,7 +232,7 @@ export default function Home() {
           <div className="reveal" style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto' }}>
             <span className="type-section">Drop in code · get back evidence</span>
             <h2 className="type-heading" style={{ margin: '16px 0 0' }}>Findings you can defend.</h2>
-            <p className="type-lede" style={{ marginTop: '18px' }}>Every result links back to the exact path through your code that produced it. Hand the witness to anyone — auditor, engineer, ticket bot — and they can verify without re-running the scan.</p>
+            <p className="type-lede" style={{ marginTop: '18px' }}>Every result links back to the exact path through your code that produced it. Hand the witness to anyone (auditor, engineer, ticket bot) and they can verify without re-running the scan.</p>
           </div>
 
           <div className="try-row reveal" style={{ marginTop: '56px' }}>
@@ -295,7 +295,7 @@ export default function Home() {
       <section className="section bone tight" style={{ textAlign: 'center' }}>
         <div className="reveal" style={{ maxWidth: '720px', margin: '0 auto' }}>
           <h2 className="type-heading">Run your first scan in a minute.</h2>
-          <p className="type-lede" style={{ marginTop: '18px' }}>Free for open-source. Free for the first repo. The auditor&apos;s edition is paid — but never the result.</p>
+          <p className="type-lede" style={{ marginTop: '18px' }}>Free for open-source. Free for the first repo. The auditor&apos;s edition is paid. Never the result.</p>
           <div className="hero-actions" style={{ marginTop: '28px' }}>
             <Link href="/signin#signup" className="btn btn-primary">Start free</Link>
             <Link href="/pricing" className="btn btn-ghost">See pricing →</Link>

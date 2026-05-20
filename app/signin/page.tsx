@@ -27,7 +27,7 @@ export default function SigninPage() {
       <main className="signin-main">
         <div style={{ maxWidth: '380px', width: '100%', margin: '0 auto' }}>
           <h1>Welcome.</h1>
-          <p className="type-body" style={{ color: 'var(--scan-graphite)', margin: '6px 0 0' }}>Sign in, or sign up — takes a minute.</p>
+          <p className="type-body" style={{ color: 'var(--scan-graphite)', margin: '6px 0 0' }}>Sign in or sign up. Takes a minute.</p>
 
           {/* Tabs */}
           <div style={{ display: 'flex', gap: '0', borderBottom: '1px solid rgba(29,13,62,0.1)', marginTop: '24px' }}>

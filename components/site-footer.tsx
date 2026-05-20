@@ -50,7 +50,7 @@ export function SiteFooter() {
       </div>
       <div className="scn-footer-bottom">
         <span>© {new Date().getFullYear()} scanipy, inc. All rights reserved.</span>
-        <span className="note">— made for teams that read their own results.</span>
+        <span className="note">made for teams that read their own results.</span>
       </div>
     </footer>
   )

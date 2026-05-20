@@ -51,7 +51,7 @@ export default function AboutPage() {
             </p>
             <p className="type-body" style={{ fontSize: '19px', lineHeight: '1.7', marginTop: '20px' }}>We were the team. We got tired of it.</p>
             <p className="type-body" style={{ fontSize: '19px', lineHeight: '1.7', marginTop: '20px' }}>
-              Scanipy began as a CLI in 2023 — a Python wrapper that drove Semgrep and CodeQL with a single config and a stricter result schema. By the time it had found CVE-2025-61765 in the wild, it had become something else: an architecture for static analysis as a reproducible, attestable function of source code. Same code in, same findings out — every time, every commit, every team.
+              Scanipy began as a CLI in 2023: a Python wrapper that drove Semgrep and CodeQL with a single config and a stricter result schema. By the time it had found CVE-2025-61765 in the wild, it had become something else: an architecture for static analysis as a reproducible, attestable function of source code. Same code in, same findings out. Every time, every commit, every team.
             </p>
             <p className="type-body" style={{ fontSize: '19px', lineHeight: '1.7', marginTop: '20px' }}>We&apos;re a remote team. We write our own results. And we charge for the attestor, not for the analysis.</p>
           </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12l5 5L20 7" /></svg>
               </div>
               <h3 style={{ color: 'var(--scan-bone)' }}>No mystery results.</h3>
-              <p style={{ color: 'rgba(251,247,242,0.78)' }}>Everything we ship can be re-derived. Everything we charge for is at the edges — compliance, attestation, scale — never the core.</p>
+              <p style={{ color: 'rgba(251,247,242,0.78)' }}>Everything we ship can be re-derived. Everything we charge for is at the edges: compliance, attestation, scale. Never the core.</p>
             </div>
           </div>
         </div>
